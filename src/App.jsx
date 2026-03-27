@@ -6,7 +6,6 @@ import Hero from './sections/Hero';
 import Filter from './sections/Filter';
 import VitrineInternacional from './sections/VitrineInternacional';
 import PlacementGallery from './sections/PlacementGallery';
-import FamilyTrust from './sections/FamilyTrust';
 import InsideShowcase from './sections/InsideShowcase';
 import DraftEuropa from './sections/DraftEuropa';
 import Proof from './sections/Proof';
@@ -44,7 +43,6 @@ function App() {
             <Filter language={language} />
             <VitrineInternacional language={language} />
             <PlacementGallery language={language} />
-            <FamilyTrust language={language} />
             <InsideShowcase language={language} />
             <DraftEuropa language={language} />
             <Proof language={language} />
