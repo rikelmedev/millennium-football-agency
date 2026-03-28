@@ -9,6 +9,9 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-brand-dark text-white font-body antialiased;
+    background-color: #080808;
+    color: white;
+    font-family: 'Lora', serif;
+    -webkit-font-smoothing: antialiased;
   }
 }

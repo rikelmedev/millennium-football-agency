@@ -1,17 +1,19 @@
+// src/App.jsx
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
+
 import Navbar from './components/Navbar';
 import Preloader from './components/Preloader';
+
 import Hero from './sections/Hero';
 import Filter from './sections/Filter';
 import VitrineInternacional from './sections/VitrineInternacional';
-import PlacementGallery from './sections/PlacementGallery';
 import InsideShowcase from './sections/InsideShowcase';
 import DraftEuropa from './sections/DraftEuropa';
 import Proof from './sections/Proof';
 import FAQ from './sections/FAQ';
 import FinalCTA from './sections/FinalCTA';
-import QualificationModal from './components/QualificationModal';
+import QualificationModal from './sections/QualificationModal';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -19,14 +21,14 @@ function App() {
   const [language, setLanguage] = useState('PT');
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2500);
+    const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
   const openModal = () => setIsModalOpen(true);
 
   return (
-    <div className="min-h-screen bg-brand-dark selection:bg-brand-accent/30 overflow-x-hidden">
+    <div className="min-h-screen bg-white text-zinc-900 selection:bg-brand-accent/20 overflow-x-hidden">
       <AnimatePresence>
         {loading && <Preloader key="preloader" />}
       </AnimatePresence>
@@ -34,26 +36,35 @@ function App() {
       {!loading && (
         <>
           <Navbar onCtaClick={openModal} language={language} setLanguage={setLanguage} />
-          <main>
+          
+          <main className="flex flex-col w-full">
             <Hero 
-             videoID={language === 'PT' ? 'CJjp8afhPT4' : 'hqwE-6tbSIE'} 
-             onCtaClick={openModal} 
-             language={language} 
-             />
+              videoID={language === 'PT' ? 'CJjp8afhPT4' : 'hqwE-6tbSIE'} 
+              onCtaClick={openModal} 
+              language={language} 
+              backgroundImage="/assets/time.jpg" 
+            />
+
             <Filter language={language} />
+
             <VitrineInternacional language={language} />
-            <PlacementGallery language={language} />
+
             <InsideShowcase language={language} />
+
             <DraftEuropa language={language} />
+
             <Proof language={language} />
+
             <FAQ language={language} />
+
             <FinalCTA onCtaClick={openModal} language={language} />
           </main>
-          <footer className="py-16 text-center border-t border-white/5 px-6 bg-[#080808]">
-            <div className="text-brand-accent font-heading font-black italic uppercase tracking-widest text-xl mb-4">
-              Millennium<span className="text-white">Football</span>
+          
+          <footer className="py-24 text-center border-t border-zinc-100 px-6 bg-zinc-50">
+            <div className="text-brand-accent font-heading font-black italic uppercase tracking-widest text-2xl mb-4">
+              Millennium<span className="text-zinc-900">Football</span>
             </div>
-            <p className="text-slate-600 font-heading text-sm uppercase tracking-widest leading-loose">
+            <p className="text-zinc-400 font-heading text-xs uppercase tracking-[0.3em] font-bold">
               © 2026 Millennium Football Agency. <br className="md:hidden" /> Todos os direitos reservados.
             </p>
           </footer>

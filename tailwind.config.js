@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 export default {
   content: [
     "./index.html",
@@ -7,16 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        brand: {
-          dark: '#0A0A0A',    
-          accent: '#d97757', 
-          slate: '#b0aea5',  
-        }
+        'brand-white': '#FFFFFF',
+        'brand-dark': '#1A1A1A',   
+        'brand-accent': '#E31B23', 
+        'brand-gray': '#F8F8F8',  
       },
-      fontFamily: {
-        heading: ['Poppins', 'sans-serif'], 
-        body: ['Lora', 'serif'],           
-      }
     },
   },
   plugins: [],
