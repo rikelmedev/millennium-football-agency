@@ -2,17 +2,19 @@ import React from 'react';
 
 export default function VitrineInternacional({ language }) {
   const t = {
-    PT: { 
-      title: "ENFRENTAMOS", 
-      accent: "OS GIGANTES", 
-      desc: "Descubra como a Millennium coloca os seus atletas frente a frente com os maiores do mundo." 
-    },
-    EN: { 
-      title: "WE FACE", 
-      accent: "THE GIANTS", 
-      desc: "Discover how Millennium puts its athletes face to face with the world's biggest clubs." 
-    }
-  }[language];
+  PT: { 
+    tag: "NÍVEL COMPETITIVO",
+    title: "NO MESMO GRAMADO QUE", 
+    accent: "OS GIGANTES", 
+    desc: "Isso não é um jogo festivo. Nós colocamos nossos atletas para enfrentar as categorias de base e times principais dos maiores clubes da Europa. Se você quer ser visto, precisa jogar onde os olheiros estão." 
+  },
+  EN: { 
+    tag: "COMPETITIVE LEVEL",
+    title: "ON THE SAME PITCH AS", 
+    accent: "THE GIANTS", 
+    desc: "This isn't a friendly match. We put our athletes against the youth and first teams of Europe's biggest clubs. If you want to be seen, you need to play where the scouts are watching." 
+  }
+}[language];
 
   // Os 3 IDs dos vídeos do YouTube Shorts
   const shortsIds = [

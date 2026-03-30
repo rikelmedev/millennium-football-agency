@@ -7,6 +7,8 @@ import Preloader from './components/Preloader';
 
 import Hero from './sections/Hero';
 import Filter from './sections/Filter';
+import OqueEShowcase from './sections/OqueEShowcase';
+import OqueInclui from './sections/OqueInclui';
 import VitrineInternacional from './sections/VitrineInternacional';
 import InsideShowcase from './sections/InsideShowcase';
 import DraftEuropa from './sections/DraftEuropa';
@@ -45,9 +47,9 @@ function App() {
               backgroundImage="/assets/time.jpg" 
             />
 
-            <Filter language={language} />
+            <OqueEShowcase language={language} />
 
-            <VitrineInternacional language={language} />
+            <OqueInclui language={language} />
 
             <InsideShowcase language={language} />
 
@@ -55,8 +57,11 @@ function App() {
 
             <Proof language={language} />
 
-            <FAQ language={language} />
+            <VitrineInternacional language={language} />
 
+            <Filter language={language} />
+
+            <FAQ language={language} />
             <FinalCTA onCtaClick={openModal} language={language} />
           </main>
           
