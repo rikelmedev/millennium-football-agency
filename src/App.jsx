@@ -1,18 +1,21 @@
-// src/App.jsx
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
+
 
 import Navbar from './components/Navbar';
 import Preloader from './components/Preloader';
 
+
 import Hero from './sections/Hero';
-import Filter from './sections/Filter';
-import OqueEShowcase from './sections/OqueEShowcase';
-import OqueInclui from './sections/OqueInclui';
-import VitrineInternacional from './sections/VitrineInternacional';
-import InsideShowcase from './sections/InsideShowcase';
-import DraftEuropa from './sections/DraftEuropa';
-import Proof from './sections/Proof';
+import OqueEShowcase from './sections/OqueEShowcase';   
+import ParaQuemE from './sections/ParaQuemE';           
+import OqueInclui from './sections/OqueInclui';         
+import InsideShowcase from './sections/InsideShowcase'; 
+import AtletasContratados from './sections/AtletasContratados'; 
+import Estatisticas from './sections/Estatisticas';     
+import Proof from './sections/Proof';                   
+import VitrineInternacional from './sections/VitrineInternacional'; 
+import Filter from './sections/Filter';                
 import FAQ from './sections/FAQ';
 import FinalCTA from './sections/FinalCTA';
 import QualificationModal from './sections/QualificationModal';
@@ -30,7 +33,7 @@ function App() {
   const openModal = () => setIsModalOpen(true);
 
   return (
-    <div className="min-h-screen bg-white text-zinc-900 selection:bg-brand-accent/20 overflow-x-hidden">
+    <div className="min-h-screen bg-white text-zinc-900 selection:bg-brand-accent/20 overflow-x-hidden font-sans">
       <AnimatePresence>
         {loading && <Preloader key="preloader" />}
       </AnimatePresence>
@@ -49,11 +52,15 @@ function App() {
 
             <OqueEShowcase language={language} />
 
+            <ParaQuemE language={language} />
+
             <OqueInclui language={language} />
 
             <InsideShowcase language={language} />
 
-            <DraftEuropa language={language} />
+            <AtletasContratados language={language} />
+
+            <Estatisticas language={language} />
 
             <Proof language={language} />
 

@@ -5,21 +5,23 @@ import FilterCard from '../components/FilterCard';
 
 export default function Filter({ language }) {
   const t = {
-    PT: {
-      title: "APENAS PARA QUEM QUER", accent: " O TOPO",
-      desc: "Filtramos curiosos. Nosso foco é transformar atletas de alto rendimento em profissionais.",
-      card1: { title: "IDADE E PERFIL", desc: "Exclusivo para atletas 18+ prontos para o nível de exigência do mercado europeu." },
-      card2: { title: "INVESTIMENTO", desc: "Budget mínimo de €2.6k Euros disponível para viabilizar o seu projeto." },
-      card3: { title: "BACKGROUND", desc: "Experiência comprovada em categorias de base ou clubes federados." }
-    },
-    EN: {
-      title: "ONLY FOR THOSE SEEKING", accent: " THE TOP",
-      desc: "We filter out the curious. Our focus is turning high-performance athletes into professionals.",
-      card1: { title: "AGE & PROFILE", desc: "Exclusive for 18+ athletes ready for the European professional market." },
-      card2: { title: "INVESTMENT", desc: "Minimum budget of €2.6k Euros available to enable your project." },
-      card3: { title: "BACKGROUND", desc: "Proven experience in youth academies or federated clubs." }
-    }
-  }[language];
+  PT: {
+    tag: "PROCESSO DE SELEÇÃO",
+    title: "ESTA OPORTUNIDADE É",
+    accent: "PARA VOCÊ?",
+    desc: "Não vendemos apenas pacotes, selecionamos talentos. Para manter o alto nível de exposição perante os scouts europeus, as vagas são limitadas por posição. Analise se você se encaixa no perfil de investimento e ambição da Millennium.",
+    investmentLabel: "INVESTIMENTO NO SEU FUTURO",
+    cta: "QUERO MINHA AVALIAÇÃO"
+  },
+  EN: {
+    tag: "SELECTION PROCESS",
+    title: "IS THIS OPPORTUNITY",
+    accent: "FOR YOU?",
+    desc: "We don't just sell packages; we select talent. To maintain a high level of exposure to European scouts, spots are limited by position. Analyze if you fit Millennium's investment and ambition profile.",
+    investmentLabel: "INVESTMENT IN YOUR FUTURE",
+    cta: "I WANT MY EVALUATION"
+  }
+}[language];
 
   return (
     <section id="filtro" className="py-16 md:py-24 px-6 bg-brand-white">

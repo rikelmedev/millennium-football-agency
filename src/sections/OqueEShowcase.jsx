@@ -5,46 +5,46 @@ export default function OqueEShowcase({ language }) {
   const t = {
     PT: {
       tag: "O PROJETO",
-      title: "O CAMINHO MAIS CURTO ENTRE VOCÊ E O",
-      accent: "FUTEBOL EUROPEU",
-      desc: "O Showcase Millennium não é uma 'peneira' comum onde você é apenas mais um. É uma imersão de elite de 10 dias na Eslovênia e Croácia, desenhada estrategicamente para atletas que já possuem o talento, mas não têm os contatos certos. Você vai treinar, viver e jogar como um profissional europeu, sob o olhar atento de quem decide o futuro nos clubes.",
+      title: "UMA IMERSÃO FOCADA EM",
+      accent: "RESULTADOS REAIS",
+      desc: "O Showcase da Millennium oferece 26 dias na Croácia de treinamento intensivo e jogos contra equipes de diversas divisões europeias. Esta é a sua chance de ser avaliado por olheiros e diretores de clubes que buscam talentos exatamente como você.",
       items: [
         { 
-          title: "Exposição Real", 
-          desc: "Nada de vídeos editados. Você jogará partidas reais contra clubes da 1ª e 2ª divisão, com scouts oficiais na arquibancada.",
+          title: "Jogos Reais", 
+          desc: "Partidas contra equipes da 1ª, 2ª e 3ª divisão. Você em campo contra a elite local.",
           icon: <Target className="text-brand-accent" size={32} />
         },
         { 
-          title: "Metodologia UEFA", 
-          desc: "Treinos intensivos com comissão técnica licenciada, focados no que o mercado europeu exige taticamente hoje.",
+          title: "Treinamento Europeu", 
+          desc: "Preparação física e tática voltada para a exigência do futebol moderno europeu.",
           icon: <Trophy className="text-brand-accent" size={32} />
         },
         { 
-          title: "Network Direto", 
-          desc: "Acesso direto à diretoria da Millennium, agência com trânsito livre nos maiores clubes do Leste Europeu.",
+          title: "Exposição Direta", 
+          desc: "Seu futebol visto de perto por quem assina os contratos nos clubes.",
           icon: <Users className="text-brand-accent" size={32} />
         }
       ]
     },
     EN: {
       tag: "THE PROJECT",
-      title: "THE SHORTEST PATH BETWEEN YOU AND",
-      accent: "EUROPEAN FOOTBALL",
-      desc: "The Millennium Showcase is not just another 'tryout' where you're just a number. It's a 10-day elite immersion in Slovenia and Croatia, strategically designed for athletes who have the talent but lack the right connections. You will train, live, and play like a European pro, under the watchful eye of those who decide the future in the clubs.",
+      title: "AN IMMERSION FOCUSED ON",
+      accent: "REAL RESULTS",
+      desc: "The Millennium Showcase offers 26 days in Croatia of intensive training and matches against teams from various European divisions. This is your chance to be evaluated by scouts and club directors looking for talent just like you.",
       items: [
         { 
-          title: "Real Exposure", 
-          desc: "No edited highlights. You will play real matches against 1st and 2nd division clubs, with official scouts in the stands.",
+          title: "Real Matches", 
+          desc: "Games against 1st, 2nd, and 3rd division teams. You on the pitch against local elite.",
           icon: <Target className="text-brand-accent" size={32} />
         },
         { 
-          title: "UEFA Methodology", 
-          desc: "Intensive training with licensed coaching staff, focused on today's tactical demands in the European market.",
+          title: "European Training", 
+          desc: "Physical and tactical preparation focused on the demands of modern European football.",
           icon: <Trophy className="text-brand-accent" size={32} />
         },
         { 
-          title: "Direct Network", 
-          desc: "Direct access to Millennium's board, an agency with free passage into the biggest clubs in Eastern Europe.",
+          title: "Direct Exposure", 
+          desc: "Your football seen up close by those who sign the contracts at the clubs.",
           icon: <Users className="text-brand-accent" size={32} />
         }
       ]
