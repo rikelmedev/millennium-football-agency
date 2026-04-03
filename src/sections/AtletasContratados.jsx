@@ -56,7 +56,7 @@ export default function AtletasContratados({ language }) {
           carouselRef.current.scrollBy({ left: 320, behavior: 'smooth' }); 
         }
       }
-    }, 3000); 
+    }, 1000); 
     
     return () => clearInterval(interval);
   }, []);
