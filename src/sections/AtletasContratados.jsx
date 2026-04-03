@@ -4,6 +4,17 @@ import { motion } from 'framer-motion';
 export default function AtletasContratados({ language }) {
   const carouselRef = useRef(null);
 
+  const t = {
+    PT: {
+      title: "NOSSOS ", accent: "CONTRATADOS",
+      desc: "Atletas que viveram o Showcase e hoje assinaram seus contratos profissionais na Europa."
+    },
+    EN: {
+      title: "OUR ", accent: "SIGNED ATHLETES",
+      desc: "Athletes who lived the Showcase and today have signed their professional contracts in Europe."
+    }
+  }[language] || {};
+
   const athletes = [
     { name: "ADONAI", club: "NK POLET", image: "/assets/case-Adonai.jpg" },
     { name: "CARIOCA", club: "NK NEDELISCE", image: "/assets/case-Carioca.jpg" },
@@ -34,7 +45,7 @@ export default function AtletasContratados({ language }) {
     { name: "YASSINE", club: "NK BILOGORA", image: "/assets/case-Yassine.jpg" }
   ];
 
-  // Efeito de carrossel automático (Auto-play)
+  // Efeito de Auto-play (Passar sozinho)
   useEffect(() => {
     const interval = setInterval(() => {
       if (carouselRef.current) {
@@ -42,38 +53,55 @@ export default function AtletasContratados({ language }) {
         if (scrollLeft + clientWidth >= scrollWidth - 10) {
           carouselRef.current.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
-          carouselRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+          carouselRef.current.scrollBy({ left: 320, behavior: 'smooth' }); 
         }
       }
-    }, 3000);
+    }, 3000); 
+    
     return () => clearInterval(interval);
   }, []);
 
   return (
     <section className="py-24 bg-brand-white px-6 overflow-hidden">
-      <div className="max-w-[90rem] mx-auto text-center mb-16">
-        <h2 className="text-4xl md:text-6xl font-black italic text-brand-dark uppercase">
-          NOSSOS <span className="text-brand-accent">CONTRATADOS</span>
-        </h2>
-        <p className="text-zinc-500 font-medium mt-4">Cases reais de sucesso da Millennium Football Agency</p>
-      </div>
-
-      <div 
-        ref={carouselRef} 
-        className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden scroll-smooth"
-      >
-        {athletes.map((a, i) => (
-          <div key={i} className="flex-none w-[280px] bg-white rounded-2xl overflow-hidden shadow-lg border border-zinc-100 relative snap-center">
-            <div className="absolute top-4 right-4 bg-green-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase z-10 shadow-md">
-              Contratado
-            </div>
-            <img src={a.image} alt={a.name} className="w-full aspect-[4/5] object-cover" />
-            <div className="p-5">
-              <h4 className="text-brand-dark font-black italic text-xl uppercase truncate">{a.name}</h4>
-              <p className="text-zinc-400 font-bold text-xs uppercase truncate">{a.club}</p>
-            </div>
+      <div className="max-w-[90rem] mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 gap-6 text-center md:text-left">
+          <div>
+            <h2 className="font-heading text-4xl md:text-6xl font-black italic text-brand-dark uppercase leading-none mb-4">
+              {t.title} <span className="text-brand-accent">{t.accent}</span>
+            </h2>
+            <p className="text-zinc-500 text-lg font-medium max-w-2xl">{t.desc}</p>
           </div>
-        ))}
+        </div>
+
+        <div 
+          ref={carouselRef} 
+          className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden scroll-smooth"
+        >
+          {athletes.map((a, i) => (
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.05 }}
+              viewport={{ once: true }}
+              className="flex-none w-[280px] md:w-[300px] snap-center rounded-[1.5rem] overflow-hidden shadow-xl shadow-zinc-200 border border-zinc-100 bg-white"
+            >
+              <div className="relative aspect-[4/5] w-full bg-zinc-950 flex items-center justify-center">
+                
+                <img 
+                  src={a.image} 
+                  alt={a.name} 
+                  className="w-full h-full object-contain" 
+                />
+                
+                <div className="absolute top-4 right-4 bg-green-500/90 backdrop-blur-sm text-white text-[10px] font-black italic px-3 py-1 rounded-full uppercase tracking-widest z-10 shadow-md">
+                  Aprovado
+                </div>
+              </div>
+              
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
